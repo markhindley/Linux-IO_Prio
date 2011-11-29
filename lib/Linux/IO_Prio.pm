@@ -164,7 +164,7 @@ for further details.
 
 =item $priority = ioprio_get($which, $who)
 
-=item $staus = ioprio_set($which, $who, $class, $data)
+=item $staus = ioprio_set($which, $who, $priority)
 
 =back
 
