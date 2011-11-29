@@ -112,8 +112,7 @@ __END__
 
 =head1 NAME
 
-Linux::IO_Prio - ionice wrapper for Linux syscall interface to ioprio_set and
-ioprio_get.
+Linux::IO_Prio - Interface to Linux ioprio_set and ioprio_get via syscall or ionice wrapper.
 
 =head1 SYNOPSIS
 
