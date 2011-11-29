@@ -8,7 +8,7 @@ use vars qw(@ISA @EXPORT_OK %EXPORT_TAGS $VERSION);
 use POSIX qw(ENOSYS);
 use Carp;
 
-$VERSION     = '0.1';
+$VERSION     = '0.01';
 @ISA         = qw(Exporter);
 %EXPORT_TAGS = (ionice => [qw(&ionice &ionice_class &ionice_data)],
 	        c_api => [qw(&ioprio_set &ioprio_get)],
