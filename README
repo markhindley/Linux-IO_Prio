@@ -1,8 +1,9 @@
 Linux-IO_Prio version 0.01
 ========================
 
-Linux-IO_Prio is a perl module which is a thin wrapper around ioprio_get(2) and
-ioprio_set(2).
+Linux-IO_Prio is a perl module which provides access to the Linux functions
+ioprio_get(2) and ioprio_set(2). There are also ionice functions and which
+provide slightly more convenient perlish interface than the C API.
 
 Currently there is Linux support. Other operating systems are not supported due
 to kernel limitations. However support will be added as the kernel capability
@@ -20,7 +21,7 @@ To install this module type the following:
 DEPENDENCIES
 
 This module requires only core modules. However it does require a valid
-syscall.ph file which is more dependant on the vendor distribution
+syscall.ph file which is more dependent on the vendor distribution.
 
 COPYRIGHT AND LICENCE
 
