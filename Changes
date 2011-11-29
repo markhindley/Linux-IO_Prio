@@ -1,0 +1,6 @@
+Revision history for Perl extension Linux::IO_Prio.
+
+0.01  Mon Nov  7 18:15:36 2011
+	- original version; created by h2xs 1.23 with options
+		-b5.10.0 -AX Linux::IO_Prio --skip-autoloader
+
