@@ -1,8 +1,15 @@
-use Test::More tests => 6;
+use Test::More;
 
-BEGIN { $^O = 'linux';
-	use_ok('Linux::IO_Prio', (':all'));
-    };
+BEGIN {
+    if( $^O ne 'linux' ) {
+	plan skip_all => 'implemented.t only useful on Linux: skipping';
+    }
+    else {
+	plan tests => 6;
+    }
+
+    use_ok('Linux::IO_Prio', (':all'));
+};
 
 ok(ioprio_set(IOPRIO_WHO_PROCESS, $$, IOPRIO_PRIO_VALUE(IOPRIO_CLASS_IDLE, 0)) == 0);
 
