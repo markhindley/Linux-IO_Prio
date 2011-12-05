@@ -15,7 +15,7 @@ BEGIN {
 
 ok(ioprio_set(IOPRIO_WHO_PROCESS, $$, IOPRIO_PRIO_VALUE(IOPRIO_CLASS_IDLE, 0)) == 0);
 
-ok(ioprio_get(IOPRIO_WHO_PROCESS, $$));
+ok(ioprio_get(IOPRIO_WHO_PROCESS, $$) >= 0);
 
 ok(ionice(IOPRIO_WHO_PROCESS, $$, IOPRIO_CLASS_IDLE, 0) == 0);
 
