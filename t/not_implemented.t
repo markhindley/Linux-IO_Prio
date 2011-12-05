@@ -1,4 +1,4 @@
-use Test::More tests =>11;
+use Test::More tests => 11;
 use POSIX qw(ENOSYS);
 
 BEGIN { $^O = 'unknown';
