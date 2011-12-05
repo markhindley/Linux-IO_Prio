@@ -3,13 +3,13 @@ use Linux::IO_Prio qw(:all);
 
 BEGIN {
     if( $^O ne 'linux' ) {
-    	plan skip_all => 'implemented.t tests only useful on Linux: skipping';
+    	plan skip_all => 'implemented.t tests only useful on Linux';
     }
     elsif (Linux::IO_Prio::_load_syscall()) {
 	plan tests => 5;	
     }
     else {
-	plan skip_all => 'syscall.ph not available: skipping';
+	plan skip_all => 'syscall.ph not available';
     }
 };
 
