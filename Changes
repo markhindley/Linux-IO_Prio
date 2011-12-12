@@ -8,3 +8,7 @@ Revision history for Perl extension Linux::IO_Prio.
   - fix t/implemented.t to cope with missing syscall.ph
 	- try to load sys/syscall.ph as well
 	- only run t/implemented.t on Linux
+  
+0.03 Mon Dec 12 13:59:12 2011
+  - fix syscall arguments on non-Linux OS
+  - rework tests: most combined into t/api.t
