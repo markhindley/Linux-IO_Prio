@@ -5,6 +5,6 @@ Revision history for Perl extension Linux::IO_Prio.
 		-b5.10.0 -AX Linux::IO_Prio --skip-autoloader
 
 0.02 Mon Dec 5 10:22:12 2011
-        - fix t/implemented.t to cope with missing syscall.ph
+  - fix t/implemented.t to cope with missing syscall.ph
 	- try to load sys/syscall.ph as well
 	- only run t/implemented.t on Linux
