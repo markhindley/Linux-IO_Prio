@@ -41,10 +41,6 @@ else {
     warn "Linux::IO_Prio: unsupported operating system -- $^O\n";
 }
 
-foreach (*SYS_ioprio_set, *SYS_ioprio_get) {
-    $_ = \&_not_implemented unless  defined &{$_};
-}
-
 # Load syscall.ph
 sub _load_syscall {
     return eval{require('syscall.ph') || require('sys/syscall.ph')};
@@ -54,13 +50,23 @@ sub _load_syscall {
 # int ioprio_get(int which, int who);
 sub ioprio_get {
     my ($which, $who) = @_;
-    return syscall(&SYS_ioprio_get, $which, $who);
+    if (defined &SYS_ioprio_get) {
+        return syscall(SYS_ioprio_get(), $which, $who);
+    }
+    else {
+	return _not_implemented();
+    }
 }
 
 # int ioprio_set(int which, int who, int ioprio);
 sub ioprio_set {
     my ($which, $who, $ioprio) = @_;
-    return syscall(&SYS_ioprio_set, $which, $who, $ioprio);
+    if (defined &SYS_ioprio_set) {
+	return syscall(SYS_ioprio_set(), $which, $who, $ioprio);
+    }
+    else {
+	return _not_implemented();
+    }
 }
 
 # C API Macros
